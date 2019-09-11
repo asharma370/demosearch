@@ -63,6 +63,7 @@ public class SearchItemDetailsFragment extends BaseFragment {
         assert trackViewModel != null;
         Glide.with(this)
                 .load(trackViewModel.getLargeImage())
+                .placeholder(R.drawable.ic_image_placeholder)
                 .centerCrop()
                 .into(mDetailsImage);
         mDetailsTitle.setText(String.format(getString(R.string.details_track_name), trackViewModel.getName()));

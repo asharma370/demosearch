@@ -1,5 +1,7 @@
 package com.anuj.demosearch.ui.fragment;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -10,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.anuj.demosearch.R;
 import com.anuj.demosearch.business.di.AppInjector;
+import com.anuj.demosearch.business.utils.AppUtils;
 import com.anuj.demosearch.ui.presenter.contract.SearchViewContract;
 import com.anuj.demosearch.ui.presenter.SearchViewPresenter;
 import javax.inject.Inject;
@@ -54,8 +57,12 @@ public class SearchFragment extends BaseFragment implements SearchViewContract.V
 
     @OnClick(R.id.searchButton)
     void handleSearchClick() {
+        final ConnectivityManager connectivityManager = (ConnectivityManager) getContext()
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
         final String searchKeyword = mSearchEditText.getText().toString();
-        mPresenter.onClickSearchButton(TextUtils.isEmpty(searchKeyword), searchKeyword);
+        mPresenter.onClickSearchButton(AppUtils.isConnectedToInternet(connectivityManager),
+                TextUtils.isEmpty(searchKeyword),
+                searchKeyword);
     }
 
 }

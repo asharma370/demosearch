@@ -26,7 +26,11 @@ public class SearchViewPresenter implements SearchViewContract.Presenter {
     }
 
     @Override
-    public void onClickSearchButton(boolean empty, @NonNull final String searchKeyword) {
+    public void onClickSearchButton(boolean connectedToInternet, boolean empty, @NonNull final String searchKeyword) {
+        if (!connectedToInternet) {
+            mView.showMessage(R.string.error_internet_not_available);
+            return;
+        }
         if (empty) {
             mView.showMessage(R.string.error_search_keyword_empty);
         } else {

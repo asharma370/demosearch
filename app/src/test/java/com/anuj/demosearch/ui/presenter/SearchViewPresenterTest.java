@@ -1,9 +1,9 @@
 package com.anuj.demosearch.ui.presenter;
 
 import android.content.Context;
-import android.text.TextUtils;
 
 import com.anuj.demosearch.R;
+import com.anuj.demosearch.business.utils.AppUtils;
 import com.anuj.demosearch.ui.presenter.contract.SearchViewContract;
 
 import org.junit.Before;
@@ -32,17 +32,26 @@ public class SearchViewPresenterTest {
     }
 
     @Test
-    public void onClickSearchButton_whenEmptyString_shouldShowMessage() {
+    public void onClickSearchButton_whenNoInternet_shouldShowErrorMessage() {
         when(mContext.getString(anyInt())).thenReturn("Some message");
 
-        mPresenter.onClickSearchButton(true, KEYWORD);
+        mPresenter.onClickSearchButton(true, true, KEYWORD);
 
         verify(mView).showMessage(R.string.error_search_keyword_empty);
     }
 
     @Test
+    public void onClickSearchButton_whenEmptyString_shouldShowErrorMessage() {
+        when(mContext.getString(anyInt())).thenReturn("Some message");
+
+        mPresenter.onClickSearchButton(false, true, KEYWORD);
+
+        verify(mView).showMessage(R.string.error_internet_not_available);
+    }
+
+    @Test
     public void onClickSearchButton_whenNonEmpty_shouldSearchKeyword() {
-        mPresenter.onClickSearchButton(false, KEYWORD);
+        mPresenter.onClickSearchButton(true, false, KEYWORD);
 
         verify(mView).displaySearchResultsView(KEYWORD);
     }

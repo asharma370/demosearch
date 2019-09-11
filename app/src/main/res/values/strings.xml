@@ -26,4 +26,5 @@
     <string name="details_track_name">Track: %s</string>
     <string name="details_streamable">Streamable: %s</string>
     <string name="details_url">Url: %s</string>
+    <string name="error_internet_not_available">Please connect to internet and try again.</string>
 </resources>

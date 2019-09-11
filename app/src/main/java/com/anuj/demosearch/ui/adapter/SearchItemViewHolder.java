@@ -35,6 +35,7 @@ class SearchItemViewHolder extends RecyclerView.ViewHolder {
         searchItemSubTitle.setText(track.getArtistName());
         Glide.with(itemView.getContext())
                 .load(track.getSmallImage())
+                .placeholder(R.drawable.ic_image_placeholder)
                 .centerCrop()
                 .into(searchItemImage);
         itemView.setOnClickListener(v -> {
