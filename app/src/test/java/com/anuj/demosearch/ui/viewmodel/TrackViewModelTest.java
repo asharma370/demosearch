@@ -57,10 +57,10 @@ public class TrackViewModelTest {
         final List<TrackViewModel> trackViewModels =
                 TrackViewModel.fromDomainModel(Collections.singletonList(mTrackDomainModel));
 
-        assertEquals(imageDomainModels.size(), trackViewModels.get(0).getImage().size());
-        assertEquals(URL, trackViewModels.get(0).getImage().get(0).getImageUrl());
-        assertEquals(NAME, trackViewModels.get(0).getImage().get(0).getSize());
-        assertEquals(URL, trackViewModels.get(0).getSmallImage());
+        assertEquals(imageDomainModels.size(), trackViewModels.get(INDEX).getImage().size());
+        assertEquals(URL, trackViewModels.get(INDEX).getImage().get(INDEX).getImageUrl());
+        assertEquals(NAME, trackViewModels.get(INDEX).getImage().get(INDEX).getSize());
+        assertEquals(URL, trackViewModels.get(INDEX).getSmallImage());
     }
 
     @Test

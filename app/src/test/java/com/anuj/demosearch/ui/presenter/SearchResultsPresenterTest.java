@@ -34,8 +34,10 @@ import static org.mockito.Mockito.when;
 public class SearchResultsPresenterTest {
 
     private static final String SEARCH_KEYWORD = "keyword";
-    @Mock
-    SearchResultsUseCase mSearchResultUseCase;
+    private static final String SOME_MESSAGE = "Some message";
+    private static final String ERROR_MESSAGE = "An error has occurred!";
+
+    @Mock SearchResultsUseCase mSearchResultUseCase;
     @Mock SearchResultsContract.View mView;
     @Mock SearchResults mSearchResults;
     @Mock Results mResults;
@@ -76,9 +78,9 @@ public class SearchResultsPresenterTest {
 
     @Test
     public void searchData_whenErrorCall_shouldDisplayErrorMessage() {
-        when(mContext.getString(anyInt())).thenReturn("Some message");
+        when(mContext.getString(anyInt())).thenReturn(SOME_MESSAGE);
         when(mSearchResultUseCase.searchTracks(anyString(), anyInt(), anyInt()))
-                .thenReturn(Single.error(new Throwable("An error has occurred!")));
+                .thenReturn(Single.error(new Throwable(ERROR_MESSAGE)));
 
         mPresenter.searchData(SEARCH_KEYWORD);
 

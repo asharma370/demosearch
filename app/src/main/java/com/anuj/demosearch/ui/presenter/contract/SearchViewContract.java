@@ -21,8 +21,8 @@ public interface SearchViewContract {
         /**
          * Method to handle the click listener of search button.
          *
-         * @param connectedToInternet
-         * @param empty
+         * @param connectedToInternet Is connected to internet.
+         * @param empty Is keyword empty.
          * @param searchKeyword Pass search keyword.
          */
         void onClickSearchButton(boolean connectedToInternet, boolean empty, @NonNull final String searchKeyword);

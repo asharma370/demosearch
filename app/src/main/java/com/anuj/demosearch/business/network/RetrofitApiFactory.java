@@ -16,6 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RetrofitApiFactory {
 
+    private static final int TIMEOUT = 10;
     private final Retrofit mRetrofit;
 
     public RetrofitApiFactory() {
@@ -32,8 +33,8 @@ public class RetrofitApiFactory {
         final HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         return new OkHttpClient.Builder()
-                .readTimeout(5, TimeUnit.SECONDS)
-                .connectTimeout(5, TimeUnit.SECONDS)
+                .readTimeout(TIMEOUT, TimeUnit.SECONDS)
+                .connectTimeout(TIMEOUT, TimeUnit.SECONDS)
                 .addInterceptor(interceptor)
                 .build();
     }

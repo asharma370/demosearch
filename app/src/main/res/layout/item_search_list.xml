@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/searchItemImage"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="@dimen/item_list_image_icon_size"
+        android:layout_height="@dimen/item_list_image_icon_size"
         android:contentDescription="@string/null_string"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

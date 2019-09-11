@@ -20,7 +20,8 @@ public class AppUtils {
      * @param connectivityManager Connectivity manager.
      * @return Boolean is connected.
      */
-    public static boolean isConnectedToInternet(@NonNull final ConnectivityManager connectivityManager) {
+    public static boolean isConnectedToInternet(@NonNull final ConnectivityManager
+                                                        connectivityManager) {
         final NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         return connectivityManager.getActiveNetworkInfo() != null
                 && (activeNetworkInfo.isConnected() || activeNetworkInfo.isConnectedOrConnecting());

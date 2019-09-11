@@ -24,7 +24,6 @@ import butterknife.ButterKnife;
 public class SearchItemDetailsFragment extends BaseFragment {
 
     private static final String KEY_DATA = "KEY_DATA";
-    private static final int IMG_LARGE = 2;
 
     @BindView(R.id.detailsImageView) ImageView mDetailsImage;
     @BindView(R.id.detailsTitle) TextView mDetailsTitle;

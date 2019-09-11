@@ -3,7 +3,6 @@ package com.anuj.demosearch.ui.presenter;
 import android.content.Context;
 
 import com.anuj.demosearch.R;
-import com.anuj.demosearch.business.utils.AppUtils;
 import com.anuj.demosearch.ui.presenter.contract.SearchViewContract;
 
 import org.junit.Before;
@@ -20,6 +19,7 @@ import static org.mockito.Mockito.when;
 public class SearchViewPresenterTest {
 
     private static final String KEYWORD = "Keyword";
+    private static final String SOME_MESSAGE = "Some message";
     @Mock SearchViewContract.View mView;
     @Mock Context mContext;
 
@@ -33,7 +33,7 @@ public class SearchViewPresenterTest {
 
     @Test
     public void onClickSearchButton_whenNoInternet_shouldShowErrorMessage() {
-        when(mContext.getString(anyInt())).thenReturn("Some message");
+        when(mContext.getString(anyInt())).thenReturn(SOME_MESSAGE);
 
         mPresenter.onClickSearchButton(true, true, KEYWORD);
 
@@ -42,7 +42,7 @@ public class SearchViewPresenterTest {
 
     @Test
     public void onClickSearchButton_whenEmptyString_shouldShowErrorMessage() {
-        when(mContext.getString(anyInt())).thenReturn("Some message");
+        when(mContext.getString(anyInt())).thenReturn(SOME_MESSAGE);
 
         mPresenter.onClickSearchButton(false, true, KEYWORD);
 
