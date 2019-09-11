@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Search Track</string>
+    <!--Search Screen-->
+    <string name="search_tracks">Search Tracks</string>
+    <string name="track">Track</string>
+    <string name="artist">Artist</string>
+    <string name="album">Album</string>
+    <string name="keyword_to_search">Keyword to search</string>
+    <string name="search_btn">Search</string>
+
+    <!--Result screen-->
+    <string name="search_results">Search Results</string>
+    <string name="please_wait">Please wait</string>
+
+    <!--Dummy strings-->
+    <string name="dummy_header_text">Dummy text header</string>
+    <string name="null_string">null</string>
+
+    <!--Validations-->
+    <string name="error_search_keyword_empty">Search keyword can\'t be empty.</string>
+    <string name="error_something_went_wrong">Something went wrong, please try later.</string>
+
+    <!--Details screen-->
+    <string name="details_listeners">Total listerner: %s</string>
+    <string name="details_artist_name">Artist: %s</string>
+    <string name="details_track_name">Track: %s</string>
+    <string name="details_streamable">Streamable: %s</string>
+    <string name="details_url">Url: %s</string>
+</resources>

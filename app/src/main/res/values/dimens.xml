@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Margins-->
+    <dimen name="screenMargin">16dp</dimen>
+    <dimen name="smallMargin">8dp</dimen>
+
+    <!--Text Size-->
+    <dimen name="headerTextSize">20sp</dimen>
+    <dimen name="smallTextSize">16sp</dimen>
+    <dimen name="list_item_bottom_margin">10dp</dimen>
+</resources>

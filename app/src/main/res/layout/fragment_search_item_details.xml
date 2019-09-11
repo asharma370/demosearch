@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:focusableInTouchMode="false">
+
+    <ImageView
+        android:id="@+id/detailsImageView"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:contentDescription="@string/null_string"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/detailsTitle"
+        style="@style/SearchApp.HeaderText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/smallMargin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailsImageView"
+        tools:text="@string/dummy_header_text" />
+
+    <TextView
+        android:id="@+id/detailsSubTitle"
+        style="@style/SearchApp.Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/smallMargin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailsTitle"
+        tools:text="@string/dummy_header_text" />
+
+    <TextView
+        android:id="@+id/detailsSubTitleTwo"
+        style="@style/SearchApp.Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/smallMargin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailsSubTitle"
+        tools:text="@string/dummy_header_text" />
+
+    <TextView
+        android:id="@+id/detailsSubTitleThree"
+        style="@style/SearchApp.Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/smallMargin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailsSubTitleTwo"
+        tools:text="@string/dummy_header_text" />
+
+    <TextView
+        android:id="@+id/detailsSubTitleFour"
+        style="@style/SearchApp.Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/smallMargin"
+        android:autoLink="web"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailsSubTitleThree"
+        tools:text="@string/dummy_header_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/screenMargin">
+
+    <TextView
+        android:id="@+id/searchListLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/smallMargin"
+        android:text="@string/search_results"
+        android:textColor="@color/headerTextColor"
+        android:textSize="@dimen/headerTextSize"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchListRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/smallMargin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchListLabel" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:background="@drawable/progress_loader_bg"
+        app:layout_constraintBottom_toBottomOf="@id/searchListProgressLabel"
+        app:layout_constraintLeft_toLeftOf="@id/searchListProgress"
+        app:layout_constraintRight_toRightOf="@id/searchListProgress"
+        app:layout_constraintTop_toTopOf="@id/searchListProgress" />
+
+    <ProgressBar
+        android:id="@+id/searchListProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/searchListProgressLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/smallMargin"
+        android:text="@string/please_wait"
+        android:textColor="@color/loaderTextColor"
+        android:textSize="@dimen/headerTextSize"
+        app:layout_constraintLeft_toLeftOf="@id/searchListProgress"
+        app:layout_constraintRight_toRightOf="@id/searchListProgress"
+        app:layout_constraintTop_toBottomOf="@id/searchListProgress" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/progressViewGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="searchListProgress,searchListProgressLabel,view"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
